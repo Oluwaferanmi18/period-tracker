@@ -11,13 +11,34 @@ print("your next period starts.")
 print()
 
 
-last_period = input("When did your last period start? (Please enter in DD/MM/YYYY format): ")
+last_period = input("When did your last period start? (Please enter in DD/MM/YYYY format):  ")
 
-cycle_length = input("How many days is your average cycle?")
-cycle_length = int(cycle_length)
-period_length = input("How many days does your period usually last? ")
-period_length = int(period_length)
+while len(last_period) != 10 or last_period[2] != "/" or last_period[5] != "/":
+    print("Please enter a valid date in DD/MM/YYYY format.")
+    last_period = input("When did your last period start? (Please enter in DD/MM/YYYY format): ")
 
+while True:
+    try:
+        cycle_length = input("How many days is your average cycle?")
+        cycle_length = int(cycle_length)
+        if cycle_length >= 21 and cycle_length <= 35:
+            break
+        else:
+            print("Please enter a cycle length between 21 and 35 days.")
+
+    except ValueError:
+        print("Please enter a valid number.")
+
+while True:
+    try:
+        period_length = input("How many days does your period usually last? ")
+        period_length = int(period_length)
+        if period_length >= 1 and period_length <= 7:
+            break
+        else:
+            print("Please enter a period length between 1 and 7 days.")
+    except ValueError:
+        print("Please enter a valid number.")
 
 print()
 
