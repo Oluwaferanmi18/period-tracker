@@ -17,6 +17,17 @@ while len(last_period) != 10 or last_period[2] != "/" or last_period[5] != "/":
     print("Please enter a valid date in DD/MM/YYYY format.")
     last_period = input("When did your last period start? (Please enter in DD/MM/YYYY format): ")
 
+day = int(last_period[0:2])
+month = int(last_period[3:5])
+year = int(last_period[6:10])
+print(day)
+print(month)
+print(year)
+
+days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+number_of_days = days_in_month[month - 1]
+
 while True:
     try:
         cycle_length = input("How many days is your average cycle?")
@@ -31,7 +42,7 @@ while True:
 
 while True:
     try:
-        period_length = input("How many days does your period usually last? ")
+        period_length = input("How many days does your period usually last?  ")
         period_length = int(period_length)
         if period_length >= 1 and period_length <= 7:
             break
