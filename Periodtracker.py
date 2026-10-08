@@ -20,9 +20,7 @@ while len(last_period) != 10 or last_period[2] != "/" or last_period[5] != "/":
 day = int(last_period[0:2])
 month = int(last_period[3:5])
 year = int(last_period[6:10])
-print(day)
-print(month)
-print(year)
+
 
 days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
@@ -59,3 +57,4 @@ print("Your average cycle is", cycle_length, "days.")
 print("Your period usually lasts", period_length, "days.")
 
 print(f"Hey, {name}! You’re doing amazing, girl. Be gentle with yourself, listen to your body, and remember, you’ve got this. 💕")
+
